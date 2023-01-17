@@ -13,7 +13,7 @@ public class RegistrationForm extends TestBase {
                 .setEmail(userEmail)
                 .setGender(gender)
                 .setPhone(userNumber)
-                .setBirthDate(month, year)
+                .setBirthDate(month, year, day)
                 .setSubjects(subjects)
                 .setHobbies(hobbies)
                 .setFile(fileName)

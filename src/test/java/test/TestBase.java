@@ -8,6 +8,7 @@ public class TestBase {
     String userEmail = "test@mail.ru";
     String gender = "Male";
     String userNumber = "1234567890";
+    String day = "30";
     String month = "November";
     String year = "1987";
     String subjects = "Maths";
