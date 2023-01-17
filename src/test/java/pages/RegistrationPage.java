@@ -55,9 +55,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setBirthDate(String day, String month, String year) {
+    public RegistrationPage setBirthDate(String month, String year) {
         $("#dateOfBirthInput").click();
-        calendarComponent.setDate(day, month, year);
+        calendarComponent.setDate(month, year);
 
         return this;
     }
@@ -86,8 +86,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setFile() {
-        $("#uploadPicture").uploadFile(new File("src/test/resources/avatar.jpg"));
+    public RegistrationPage setFile(String fileName) {
+        $("#uploadPicture").uploadFile(new File("src/test/resources/" + fileName));
 
         return this;
     }

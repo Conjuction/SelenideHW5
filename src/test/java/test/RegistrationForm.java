@@ -13,10 +13,10 @@ public class RegistrationForm extends TestBase {
                 .setEmail(userEmail)
                 .setGender(gender)
                 .setPhone(userNumber)
-                .setBirthDate(day, month, year)
+                .setBirthDate(month, year)
                 .setSubjects(subjects)
                 .setHobbies(hobbies)
-                .setFile()
+                .setFile(fileName)
                 .setAddress(currentAddress)
                 .setState(state)
                 .setCity(city)
@@ -33,7 +33,6 @@ public class RegistrationForm extends TestBase {
                 .verifyResults("Picture", fileName)
                 .verifyResults("Address", currentAddress)
                 .verifyResults("State and City", state + " " + city);
-
     }
 }
 
