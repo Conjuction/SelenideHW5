@@ -39,8 +39,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task form_test(type: Test) {
-    useJUnitPlatform{
-        includeTags("registration")
-    }
-}
