@@ -62,7 +62,7 @@ public class RegistrationPage {
 
         return this;
     }
-
+    @Step("Проверить наличие 'Thanks for submitting the form'")
     public RegistrationPage verifyResultsModalAppears() {
         registrationResultModal.verifyModalAppears();
 
