@@ -41,6 +41,6 @@ test {
 }
 task form_test(type: Test) {
     useJUnitPlatform{
-        includeTags("simple")
+        includeTags("registration")
     }
 }
