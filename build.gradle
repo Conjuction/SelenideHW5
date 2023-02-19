@@ -39,7 +39,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task simple_test(type: Test) {
+task form_test(type: Test) {
     useJUnitPlatform{
         includeTags("simple")
     }

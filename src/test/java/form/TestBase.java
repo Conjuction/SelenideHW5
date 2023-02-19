@@ -1,4 +1,4 @@
-package test;
+package form;
 
 import com.github.javafaker.Faker;
 import pages.RegistrationPage;
