@@ -1,10 +1,45 @@
 package form;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
+import helpers.Attach;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
 
+import java.util.Map;
+
 public class TestBase {
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "100.0";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeEach
+    void addListener(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+    }
+    RegistrationPage steps = new RegistrationPage();
     Faker faker = new Faker();
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
@@ -21,7 +56,6 @@ public class TestBase {
             city = getCity(),
             dayOfBirth = day + " " + month + "," + year,
             fileName = "avatar.jpg";
-    RegistrationPage registrationPage = new RegistrationPage();
 
     private String getRandomValue(String... initialValues) {
 

@@ -2,13 +2,14 @@ package form;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 @Tag("registration")
 public class RegistrationForm extends TestBase {
 
     @Test
     void registrationForm() {
 
-        registrationPage.openPage()
+        steps.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
@@ -23,7 +24,7 @@ public class RegistrationForm extends TestBase {
                 .setCity(city)
                 .submit();
 
-        registrationPage.verifyResultsModalAppears()
+        steps.verifyResultsModalAppears()
                 .verifyResults("Student Name", firstName + " " + lastName)
                 .verifyResults("Student Email", userEmail)
                 .verifyResults("Gender", gender)
