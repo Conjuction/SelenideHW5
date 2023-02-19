@@ -62,7 +62,7 @@ public class RegistrationPage {
 
         return this;
     }
-    @Step("")
+
     public RegistrationPage verifyResultsModalAppears() {
         registrationResultModal.verifyModalAppears();
 

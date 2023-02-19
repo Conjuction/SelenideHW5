@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
-
 import java.util.Map;
 
 public class TestBase {
@@ -29,9 +28,10 @@ public class TestBase {
     }
 
     @BeforeEach
-    void addListener(){
+    void addListener() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
@@ -39,6 +39,7 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
+
     RegistrationPage steps = new RegistrationPage();
     Faker faker = new Faker();
     String firstName = faker.name().firstName(),
