@@ -4,7 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@Owner("Sikhinin Dmitrii")
+@Owner("Sukhinin Dmitrii")
 @Severity(SeverityLevel.BLOCKER)
 @DisplayName("Успешная регистрация пользователя")
 public class RegistrationForm extends TestBase {
